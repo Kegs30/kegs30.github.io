@@ -1,7 +1,4 @@
-import random
-import operator
-import matplotlib.pyplot
-import agentframeworkagents
+# -*- coding: utf-8 -*-
 
 """
 Agents! practical output
@@ -11,6 +8,13 @@ https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework
 https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part5/2.html
 https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part5/3.html
 """
+
+
+import random
+import operator
+import matplotlib.pyplot
+import agentframeworkagents
+
 
 def distance_between(agents_row_a, agents_row_b):
     """Calculates the distance between agents using Pythagoras' theory
