@@ -16,7 +16,9 @@ At the end of the model is the option to save the altered environment as a comma
 
 Please see the README and LICENCE documents on the linked GitHub repository page for further information.
 
-All code can be found in the GitHub repository.
+All code can be found in the GitHub repository. 
+
+It is licensed under the MIT License. Full details can be found on the GitHub repository.
 
 
 This website has been built using GitHub pages.
