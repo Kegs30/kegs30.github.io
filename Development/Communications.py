@@ -1,33 +1,22 @@
 # -*- coding: utf-8 -*-
-
 """
-Input/Ouput practical output
+Communication practical output
 
-The code that follows is built upon the "Agents!.py" file.
+The code that follows is built upon the "Input Output.py" file.
 
 Additional code that follows has in part been modified from that of
-https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part6/index.html
-https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part6/2.html
+https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part7/index.html
+https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part7/2.html
+https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part7/3.html
+https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part7/4.html
 """
 
 import random
 import operator
 import matplotlib.pyplot
-import agentframeworkIO
+import agentframeworkcomms
 import csv
 
-def distance_between(agents_row_a, agents_row_b):
-    """Calculates the distance between agents using Pythagoras' theory
-
-    Positional arguments:
-    agents_row_a -- index position of agents list
-    agents_row_b -- index position of agents list
-
-    Returns:
-    Distance between agents.
-    """
-    return (((agents_row_a.x - agents_row_b.x)**2) +
-        ((agents_row_a.y - agents_row_b.y)**2))**0.5
 
 # Reading the in.txt file to create the environment.
 with open("in.txt", newline="") as raster:
@@ -38,32 +27,40 @@ with open("in.txt", newline="") as raster:
         for value in row:
             rowlist.append(value)
         environment.append(rowlist)
-        
-# Testing reading of data has worked.
-# Expected outcome is plot with raster image.
-matplotlib.pyplot.imshow(environment)
-matplotlib.pyplot.show()
-            
+ 
+                   
 # Setting initial parameters.
 num_of_agents = 10
-num_of_iterations = 10000
+num_of_iterations = 100
+neighbourhood = 20
 agents = []
+
 
 # Make the agents.
 # Addition of environment as argument for Agent class to allow interaction between agents and environment.
+# Addition of agents as argument for Agent class to allow agents to interact with each other.
 for i in range(num_of_agents):
-    agents.append(agentframeworkIO.Agent(environment))
+    agents.append(agentframeworkcomms.Agent(environment, agents))
     
+# Creating test instance of agent class.
+#a = agentframeworkcomms.Agent(environment,agents)
+
+# Testing instance assigned to a can access other agents in the agents list.
+# Expected outcome is integer values for y and x assigned to a and a different set of values for the 6th index located agent.
+#print(a.y, a.x)
+#print(a.agents[6].y, a.agents[6].x)
+      
+
 # Move the agents and store what they eat.
+# Print statements included in share_with_neighbours method in agentframeworkcomms module for testing purposes.
 for j in range(num_of_iterations):
+    # Shuffle function used to randomise the order agents are processed with each iteration.
+    random.shuffle(agents)
     for i in range(num_of_agents):
         agents[i].move()
         agents[i].eat()
-
-# Testing the store for each agent works as expected.
-# Expected outcome is in format "x = integer value, y = integer value, store value = integer value".
-for i in range(num_of_agents):
-   print(agents[i].__str__())
+        agents[i].share_with_neighbours(neighbourhood)
+        
 
 # Generate scatterplot of agents after model iterations.
 matplotlib.pyplot.xlim(0, 99)
@@ -73,10 +70,6 @@ for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
 matplotlib.pyplot.show()
 
-# Calling the distance function to calculate distance between all agents.
-for agents_row_a in agents:
-    for agents_row_b in agents:
-        distance = distance_between(agents_row_a, agents_row_b) 
         
 # Writing the final environment to a comma delimited text file.
 with open("out.txt", "w", newline="") as finalenviron:

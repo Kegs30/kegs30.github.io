@@ -3,7 +3,9 @@
 """
 Input/Ouput practical output
 
-The code that follows has in part been modified from that of
+The code that follows is built upon the "Agents!.py" file.
+
+Additional code that follows has in part been modified from that of
 https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part6/index.html
 https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part6/2.html
 """
