@@ -1,9 +1,9 @@
 ---
 title: ABM Assignment
 ---
-# Sheep and Wolves Model
+## Sheep and Wolves Model
 
-## A variation of an agent based model
+### A variation of an agent based model
 
 The Sheep and Wolves Model is a Python model simulating the behaviour of a flock of sheep and a pack of wolves in a field.
 The sheep interact with each other and their environment, which is based on a raster file in text format.
@@ -21,4 +21,3 @@ This software is licensed under the MIT License. Full details can be found on th
 
 This website has been built using GitHub pages.
 
-test
