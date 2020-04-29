@@ -5,23 +5,27 @@
 ### Main Model
 - sheep wolves model.py
 - sheep wolves model Development.py
-- agentframewor.py
+- agentframework.py
 - in.txt
 
 ### Development Work
 In the Development folder:
-- Agents!.py
-- Agents! Development.py
-- agentframeworkagents.py
-- Input Output.py
-- Input Output Development.py
-- agentframeworkIO.py
-- Communications.py
-- Communications Development.py
-- agentframeworkcomms.py
-- Animation.py
-- Animation Development.py
-- agentframeworkanimate.py
+- Agents folder containing:
+	- Agents!.py
+	- Agents! Development.py
+	- agentframeworkagents.py
+- Input Output folder containing:
+	- Input Output.py
+	- Input Output Development.py
+	- agentframeworkIO.py
+- Communications folder containing:
+	- Communications.py
+	- Communications Development.py
+	- agentframeworkcomms.py
+- Animation folder containing:
+	- Animation.py
+	- Animation Development.py
+	- agentframeworkanimate.py
 - tkinter interface.py
 
 ### Auxilary Documents
