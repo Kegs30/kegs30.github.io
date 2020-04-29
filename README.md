@@ -34,30 +34,30 @@ The software is an agent based model that takes an environment input and modifie
 
 It is based on the interactions of sheep grazing and breeding in a landscape with their population controlled by wolves as predators.
 
-The model first takes a raster text file (supplied by the University of Leeds) and creates an environment variable that can displayed in a matplotlib window.
+The model first takes a raster text file (supplied by the University of Leeds) and creates an environment variable that can be displayed in a matplotlib window.
 
 The model then generates a series of objects using the agentframework module and assigns them to the sheep and wolf lists.
 
 The agentframework module contains the class Agent which contains the methods for the sheep agent creation and interactions. It also contains the subclass wolves which creates the wolf agents. The wolf agents have similar but slighlty different methods to the sheep agents and they are linked to the sheep agents to allow interactions.
 
 Once the agents have been created, the model runs through the main behaviour and interactions. The behaviour of the sheep agents includes:
-	- moving across the environment
-	- eating the environment (or regurgitating if they have eaten too much)
-	- sharing their food with other sheep agents
-	- breeding with other sheep agents to generate new sheep
+- moving across the environment
+- eating the environment (or regurgitating if they have eaten too much)
+- sharing their food with other sheep agents
+- breeding with other sheep agents to generate new sheep
 The last two behaviours are dependent on the distance between the sheep agents and therefore may not occur on every iteration.
 
 The behaviour of the wolf agents includes:
-	- moving across the environment
-	- hunting and removing sheep agents
+- moving across the environment
+- hunting and removing sheep agents
 The hunting behaviour is dependent on the distance between the wolf and sheep agents and therefore may not occur on every iteration.
 
-The model is set to run as an animation in a matplotlib window. This will show the movement of the sheep and wolves and the impact on the environment. The sheep appear as white dots and the wolves as black dots.
+The model is set to run as a matplotlib animation. This will show the movement of the sheep and wolves and the impact on the environment. The sheep appear as white dots and the wolves as black dots.
 
 The model will end once one of the following conditions is met:
-	- ten iterations of the sheep and wolf behaviour
-	- all the sheep have been eaten
-	- there are 100 or more sheep in the field
+- ten iterations of the sheep and wolf behaviour
+- all the sheep have been eaten
+- there are 100 or more sheep in the field
 
 Once the model has run, a comma delimited text file called "out" can be saved in the working directory with the altered environment.
 

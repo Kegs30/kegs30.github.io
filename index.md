@@ -12,7 +12,7 @@ The sheep interact with each other and their environment, which is based on a ra
 The sheep eat the environment, share their food with each other and produce lambs.
 The sheep population is controlled by the wolves, which hunt and eat the sheep.
 
-At the end of the model is the option to save the altered environment as a comma delimited text file.
+There is an option to save the altered environment as a comma delimited text file.
 
 Please see the README document on the linked GitHub repository page for further information.
 

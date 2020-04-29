@@ -109,7 +109,6 @@ class Agent():
 # Distance between agents method.
     def distance_between(self, agent):
         """Calculates the distance between agents using Pythagoras' theory
-        Use of if statement to default calculations against self to 100
 
         Positional arguments:
         agent -- list of objects (no default set)
@@ -117,9 +116,6 @@ class Agent():
         Returns:
         integer value of distance
         """ 
-        #if (self.x == agent.x) and (self.y == agent.y):
-            #return 100
-        #else:
         return (((self.x - agent.x) ** 2) + ((self.y - agent.y) ** 2)) ** 0.5
         
 # Share with neighbours method. 
@@ -156,7 +152,7 @@ class Agent():
         lamb_distance -- integer value (no default set)
         
         Returns:
-        Boolean
+        string
         """
         for agent in self.agents:
             distance = self.distance_between(agent)
@@ -246,10 +242,11 @@ class Wolves(Agent):
         """Removes an agent (sheep) if wolf is within hunting_distance
         
         Positional arguments:
-        hunting_distance - integer value (no default set)
+        hunting_distance -- integer value (no default set)
+        agents -- list of objects (no default set)
         
         Returns:
-        Boolean
+        string
         """
         for agent in agents:
             wolf_distance = self.prey_distance(agent)
